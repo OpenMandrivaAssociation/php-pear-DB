@@ -3,7 +3,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.7.14
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	Database Abstraction Layer
 License:	PHP License
 Group:		Development/PHP
@@ -14,6 +14,8 @@ Requires(preun): php-pear
 Requires:	php-pear
 BuildRequires:	php-pear
 BuildArch:	noarch
+# because it was broken out and the one doing it was pretty careless...
+Conflicts:	php-pear < 1:1.9
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
