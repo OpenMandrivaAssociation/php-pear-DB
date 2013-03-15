@@ -2,8 +2,8 @@
 %define		upstream_name	%{_class}
 
 Name:		php-pear-%{upstream_name}
-Version:	1.7.14
-Release:	4
+Version:	1.7.13
+Release:	7
 Summary:	Database Abstraction Layer
 License:	PHP License
 Group:		Development/PHP
@@ -14,7 +14,6 @@ Requires(preun): php-pear
 Requires:	php-pear
 BuildRequires:	php-pear
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 DB is a database abstraction layer providing:
@@ -38,7 +37,6 @@ DB is a database abstraction layer providing:
 mv package.xml %{upstream_name}-%{version}/%{upstream_name}.xml
 
 %install
-rm -rf %{buildroot}
 
 cd %{upstream_name}-%{version}
 pear install --nodeps --packagingroot %{buildroot} %{upstream_name}.xml
@@ -51,7 +49,6 @@ install -d %{buildroot}%{_datadir}/pear/packages
 install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 %clean
-rm -rf %{buildroot}
 
 
 
