@@ -2,8 +2,8 @@
 %define		upstream_name	%{_class}
 
 Name:		php-pear-%{upstream_name}
-Version:	1.7.13
-Release:	7
+Version:	1.7.14
+Release:	6
 Summary:	Database Abstraction Layer
 License:	PHP License
 Group:		Development/PHP
