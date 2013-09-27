@@ -1,19 +1,18 @@
-%define		_class		    DB
-%define		upstream_name	%{_class}
+%define _class	DB
+%define	modname	%{_class}
 
-Name:		php-pear-%{upstream_name}
+Summary:	Database Abstraction Layer
+Name:		php-pear-%{modname}
 Version:	1.7.14
 Release:	6
-Summary:	Database Abstraction Layer
 License:	PHP License
 Group:		Development/PHP
-URL:		http://pear.php.net/package/%{upstream_name}
-Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}.tgz
-Requires(post): php-pear
-Requires(preun): php-pear
-Requires:	php-pear
-BuildRequires:	php-pear
+Url:		http://pear.php.net/package/%{modname}
+Source0:	http://download.pear.php.net/package/%{modname}-%{version}.tgz
 BuildArch:	noarch
+BuildRequires:	php-pear
+Requires(post,preun): php-pear
+Requires:	php-pear
 
 %description
 DB is a database abstraction layer providing:
@@ -33,54 +32,23 @@ DB is a database abstraction layer providing:
 * DocBook and phpDocumentor API documentation
 
 %prep
-%setup -q -c
-mv package.xml %{upstream_name}-%{version}/%{upstream_name}.xml
+%setup -qc
+mv package.xml %{modname}-%{version}/%{modname}.xml
 
 %install
-
-cd %{upstream_name}-%{version}
-pear install --nodeps --packagingroot %{buildroot} %{upstream_name}.xml
+cd %{modname}-%{version}
+pear install --nodeps --packagingroot %{buildroot} %{modname}.xml
 rm -rf %{buildroot}%{_datadir}/pear/.??*
 
 rm -rf %{buildroot}%{_datadir}/pear/docs
 rm -rf %{buildroot}%{_datadir}/pear/tests
 
 install -d %{buildroot}%{_datadir}/pear/packages
-install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
-
-%clean
-
-
+install -m 644 %{modname}.xml %{buildroot}%{_datadir}/pear/packages
 
 %files
-%defattr(-,root,root)
-%doc %{upstream_name}-%{version}/doc/*
+%doc %{modname}-%{version}/doc/*
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/%{_class}.php
-%{_datadir}/pear/packages/%{upstream_name}.xml
+%{_datadir}/pear/packages/%{modname}.xml
 
-
-%changelog
-* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 1.7.13-4mdv2011.0
-+ Revision: 667491
-- mass rebuild
-
-* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 1.7.13-3mdv2011.0
-+ Revision: 607094
-- rebuild
-
-* Wed Dec 16 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.7.13-2mdv2010.1
-+ Revision: 479284
-- spec cleanup
-- use pear installer
-- don't ship tests, even in documentation
-- own all directories
-- use rpm filetriggers starting from mandriva 2010.1
-
-* Sun Sep 27 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.7.13-1mdv2010.0
-+ Revision: 450205
-- import php-pear-DB
-
-
-* Fri Sep 25 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.7.13-1mdv2010.0
-- split out from php-pear package
