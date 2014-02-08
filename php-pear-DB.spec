@@ -3,7 +3,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.7.14
-Release:	6
+Release:	7
 Summary:	Database Abstraction Layer
 License:	PHP License
 Group:		Development/PHP
