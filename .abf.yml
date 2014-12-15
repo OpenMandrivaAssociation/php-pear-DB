@@ -1,2 +1,4 @@
+removed_sources:
+  DB-1.7.14.tgz: b82a49cafcf1b87fd3075be5e1f2855c54447d1e
 sources:
-  "DB-1.7.14.tgz": b82a49cafcf1b87fd3075be5e1f2855c54447d1e
+  DB-1.8.2.tgz: 06ad56109f8e5d884a7798e12861991ca2542b49
