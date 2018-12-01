@@ -47,7 +47,11 @@ install -d %{buildroot}%{_datadir}/pear/packages
 install -m 644 %{modname}.xml %{buildroot}%{_datadir}/pear/packages
 
 %files
-%doc %{modname}-%{version}/doc/* IDEAS MAINTAINERS STATUS TESTERS
+%doc %{modname}-%{version}/doc/*
+%{_datadir}/pear/doc/DB/doc/IDEAS
+%{_datadir}/pear/doc/DB/doc/MAINTAINERS
+%{_datadir}/pear/doc/DB/doc/STATUS
+%{_datadir}/pear/doc/DB/doc/TESTERS
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/%{_class}.php
 %{_datadir}/pear/packages/%{modname}.xml
