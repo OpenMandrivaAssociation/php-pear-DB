@@ -4,7 +4,7 @@
 Summary:	Database Abstraction Layer
 Name:		php-pear-%{modname}
 Version:	1.8.2
-Release:	4
+Release:	5
 License:	PHP License
 Group:		Development/PHP
 Url:		http://pear.php.net/package/%{modname}
@@ -47,7 +47,8 @@ install -d %{buildroot}%{_datadir}/pear/packages
 install -m 644 %{modname}.xml %{buildroot}%{_datadir}/pear/packages
 
 %files
-%doc %{modname}-%{version}/doc/*
+%doc %{modname}-%{version}/doc/* IDEAS MAINTAINERS STATUS TESTERS
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/%{_class}.php
 %{_datadir}/pear/packages/%{modname}.xml
+%{_datadir}/pear/test/DB/tests/*
