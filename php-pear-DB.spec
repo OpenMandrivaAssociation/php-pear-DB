@@ -7,7 +7,7 @@ Version:	1.8.2
 Release:	6
 License:	PHP License
 Group:		Development/PHP
-Url:		http://pear.php.net/package/%{modname}
+Url:		https://pear.php.net/package/%{modname}
 Source0:	http://download.pear.php.net/package/DB-%{version}.tgz
 BuildArch:	noarch
 BuildRequires:	php-pear
