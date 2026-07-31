@@ -3,8 +3,8 @@
 
 Summary:	Database Abstraction Layer
 Name:		php-pear-%{modname}
-Version:	1.8.2
-Release:	6
+Version:	1.12.3
+Release:	1
 License:	PHP License
 Group:		Development/PHP
 Url:		https://pear.php.net/package/%{modname}
